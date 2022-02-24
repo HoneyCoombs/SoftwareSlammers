@@ -4,12 +4,13 @@ var computeFinal = require("./computeFinal.js");
 
 var prompt = require('prompt');
  var schema = {
-    properties: {      
-      HW1: {pattern: /^[1-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
-      HW2: {pattern: /^[1-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
-      HW3: {pattern: /^[1-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
-      Exam1: {pattern: /^[1-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
-      Exam2: {pattern: /^[1-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
+    properties: {     
+      //the pattern only allows an imput of 0-100. required:true makes it so you cant skip the question 
+      HW1: {pattern: /^[0-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
+      HW2: {pattern: /^[0-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
+      HW3: {pattern: /^[0-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
+      Exam1: {pattern: /^[0-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
+      Exam2: {pattern: /^[0-9][0-9]?$|^100$/,message: 'Grade must be number 0-100',required: true},
     },
   };
 
@@ -32,10 +33,10 @@ var prompt = require('prompt');
     console.log(' Homework:', totalHW)
     console.log(' Exam 1:', exam1)
     console.log(' Exam 2:', exam2)
-    console.log(' Final Grade:', Math.round(totalHW + exam1 + exam2).toFixed(1))
 
-    //the letter grade
-    console.log(' Final Letter Grade:', finalGrade)
+    //prints numeric and letter grade
+    console.log(' Resulting Numeric Grade:', Math.round(totalHW + exam1 + exam2).toFixed(1))
+    console.log(' Resulting Letter Grade:', finalGrade)
 
   });
 
